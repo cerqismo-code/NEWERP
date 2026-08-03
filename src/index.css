@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: rgb(255 255 255 / 0.06);
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #0a0a0b;
+    color: #e4e4e7;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(255 255 255 / 0.1);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(255 255 255 / 0.2);
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-2 border border-white/[0.06] rounded-2xl;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 hover:border-white/[0.12] hover:bg-surface-3;
+  }
+
+  .input-base {
+    @apply bg-surface-3 border border-white/[0.08] rounded-lg px-3 py-2 text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/30 transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-500 text-white font-medium rounded-lg px-4 py-2 text-sm transition-colors duration-200 inline-flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-surface-3 hover:bg-surface-4 border border-white/[0.08] text-zinc-200 font-medium rounded-lg px-4 py-2 text-sm transition-colors duration-200 inline-flex items-center gap-2;
+  }
+
+  .btn-ghost {
+    @apply text-zinc-400 hover:text-white hover:bg-white/[0.06] rounded-lg px-3 py-2 text-sm transition-colors duration-200 inline-flex items-center gap-2;
+  }
+}
+
+/* Recharts tooltip dark theme */
+.recharts-default-tooltip {
+  background-color: #1c1c20 !important;
+  border: 1px solid rgb(255 255 255 / 0.08) !important;
+  border-radius: 0.75rem !important;
+  padding: 12px !important;
+}
+.recharts-tooltip-label {
+  color: #a1a1aa !important;
+  font-size: 12px !important;
+  margin-bottom: 4px !important;
+}
+.recharts-tooltip-item {
+  color: #e4e4e7 !important;
+  font-size: 13px !important;
+}
